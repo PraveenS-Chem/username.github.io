@@ -1,5 +1,6 @@
 /* ============================================
-   S. PRAVEEN PORTFOLIO — script.js
+   PRAVEEN S — PORTFOLIO · script.js
+   Chemistry Educator & EdTech Developer
    ============================================ */
 
 /* ── NAV ─────────────────────────────────── */
@@ -12,14 +13,18 @@ window.addEventListener('scroll', () => {
 });
 
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
+  const isOpen = hamburger.classList.toggle('open');
   mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+  mobileMenu.setAttribute('aria-hidden', !isOpen);
 });
 
 document.querySelectorAll('.mobile-link').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
   });
 });
 
@@ -27,6 +32,10 @@ document.querySelectorAll('.mobile-link').forEach(link => {
 (function initCanvas() {
   const canvas = document.getElementById('moleculeCanvas');
   if (!canvas) return;
+
+  // Respect reduced-motion preference
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   const ctx = canvas.getContext('2d');
 
   let W, H, nodes, mouse = { x: -9999, y: -9999 };
@@ -60,12 +69,10 @@ document.querySelectorAll('.mobile-link').forEach(link => {
   function draw() {
     ctx.clearRect(0, 0, W, H);
 
-    // Update + draw nodes
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       n.pulse += 0.02;
 
-      // Mouse repulsion
       const dx = n.x - mouse.x;
       const dy = n.y - mouse.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
@@ -80,13 +87,11 @@ document.querySelectorAll('.mobile-link').forEach(link => {
       n.x += n.vx;
       n.y += n.vy;
 
-      // Bounce
       if (n.x < 0 || n.x > W) n.vx *= -1;
       if (n.y < 0 || n.y > H) n.vy *= -1;
       n.x = Math.max(0, Math.min(W, n.x));
       n.y = Math.max(0, Math.min(H, n.y));
 
-      // Draw node
       const pulseR = n.r + Math.sin(n.pulse) * 0.5;
       ctx.beginPath();
       ctx.arc(n.x, n.y, pulseR, 0, Math.PI * 2);
@@ -94,7 +99,6 @@ document.querySelectorAll('.mobile-link').forEach(link => {
       ctx.globalAlpha = 0.75;
       ctx.fill();
 
-      // Glow
       ctx.beginPath();
       ctx.arc(n.x, n.y, pulseR * 3, 0, Math.PI * 2);
       const grd = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, pulseR * 3);
@@ -104,7 +108,6 @@ document.querySelectorAll('.mobile-link').forEach(link => {
       ctx.globalAlpha = 0.4;
       ctx.fill();
 
-      // Connect edges
       for (let j = i + 1; j < nodes.length; j++) {
         const m = nodes[j];
         const ex = n.x - m.x;
@@ -142,7 +145,7 @@ document.querySelectorAll('.mobile-link').forEach(link => {
   draw();
 })();
 
-/* ── INTERSECTION OBSERVER ───────────────── */
+/* ── INTERSECTION OBSERVER (reveal animations) ── */
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -172,14 +175,35 @@ document.querySelectorAll('.skill-card').forEach(card => {
   skillObserver.observe(card);
 });
 
+/* ── PROGRESS BARS (roadmap section) ─────── */
+const progressObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.progress-bar__fill').forEach(fill => {
+        fill.style.width = fill.style.getPropertyValue('--prog');
+      });
+      progressObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.future-card').forEach(card => {
+  // start at 0 width, then animate to --prog on scroll into view
+  const fill = card.querySelector('.progress-bar__fill');
+  if (fill) fill.style.width = '0%';
+  progressObserver.observe(card);
+});
+
 /* ── WORKFLOW STEP HOVER ─────────────────── */
 document.querySelectorAll('.workflow__step').forEach((step, i) => {
   step.style.animationDelay = `${i * 0.1}s`;
   step.addEventListener('mouseenter', () => {
-    step.querySelector('.step__node').style.transform = 'scale(1.15)';
+    const nodeEl = step.querySelector('.step__node');
+    if (nodeEl) nodeEl.style.transform = 'scale(1.15)';
   });
   step.addEventListener('mouseleave', () => {
-    step.querySelector('.step__node').style.transform = '';
+    const nodeEl = step.querySelector('.step__node');
+    if (nodeEl) nodeEl.style.transform = '';
   });
 });
 
@@ -224,69 +248,69 @@ sections.forEach(s => activeObserver.observe(s));
 })();
 
 /* ── PROJECT CARD TILT ───────────────────── */
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top  + rect.height / 2;
-    const rx = (e.clientY - cy) / rect.height * 6;
-    const ry = (cx - e.clientX) / rect.width  * 6;
-    card.style.transform = `translateY(-6px) perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+const supportsHover = window.matchMedia('(hover: hover)').matches;
+if (supportsHover) {
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top  + rect.height / 2;
+      const rx = (e.clientY - cy) / rect.height * 6;
+      const ry = (cx - e.clientX) / rect.width  * 6;
+      card.style.transform = `translateY(-6px) perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
   });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
+}
 
-/* ── TYPING CURSOR IN HERO TITLE ─────────── */
-(function typingEffect() {
-  const titles = [
-    'AI-Assisted Web Application Developer',
-    'Scientific Visualization Creator',
-    'Blender Python Learner',
-    'Chemistry App Builder',
+/* ── ROLE ROTATION (replaces AI-tool typing effect) ──
+   Cycles through real professional identity roles in the
+   hero subtitle, reinforcing teaching + EdTech positioning. */
+(function roleRotation() {
+  const roles = [
+    { text: 'Chemistry Educator',  el: '.hero__title--primary'   },
+    { text: 'School Counselor',    el: '.hero__title--secondary' },
+    { text: 'EdTech Developer',    el: '.hero__title--tertiary'  },
   ];
-  const el = document.querySelector('.hero__title--primary');
-  if (!el) return;
-  let ti = 0, ci = 0, deleting = false;
 
-  function type() {
-    const current = titles[ti];
-    if (!deleting) {
-      el.textContent = current.slice(0, ++ci);
-      if (ci === current.length) {
-        deleting = true;
-        setTimeout(type, 2200);
-        return;
-      }
-    } else {
-      el.textContent = current.slice(0, --ci);
-      if (ci === 0) {
-        deleting = false;
-        ti = (ti + 1) % titles.length;
-      }
+  // If reduced motion, leave static text as-is (already set in HTML)
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Subtle fade pulse on each role tag every few seconds —
+  // calm, professional, not flashy
+  let i = 0;
+  setInterval(() => {
+    const current = roles[i % roles.length];
+    const el = document.querySelector(current.el);
+    if (el) {
+      el.style.transition = 'opacity 0.4s ease';
+      el.style.opacity = '0.5';
+      setTimeout(() => { el.style.opacity = '1'; }, 400);
     }
-    setTimeout(type, deleting ? 40 : 65);
-  }
-  setTimeout(type, 1500);
+    i++;
+  }, 3000);
 })();
 
-/* ── COUNTER ANIMATION ───────────────────── */
+/* ── STAT COUNTER ANIMATION ──────────────── */
 (function animateCounters() {
   const counters = document.querySelectorAll('.stat__num');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       const el = entry.target;
-      const text = el.textContent;
-      const num = parseInt(text);
-      if (isNaN(num)) return;
+      const text = el.textContent.trim();
+      const match = text.match(/\d+/);
+      if (!match) return; // skip non-numeric stats like "MSc"
+      const num = parseInt(match[0], 10);
+      const suffix = text.replace(/\d+/, '');
       let start = 0;
       const dur = 1200;
       const step = timestamp => {
         if (!start) start = timestamp;
         const prog = Math.min((timestamp - start) / dur, 1);
-        el.textContent = Math.floor(prog * num) + text.replace(/\d+/, '');
+        el.textContent = Math.floor(prog * num) + suffix;
         if (prog < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
