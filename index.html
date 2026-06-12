@@ -3,7 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>S. Praveen â€” AI-Assisted Web Developer & Scientific Visualization Creator</title>
+
+  <!-- ── SEO: Primary Title & Description ── -->
+  <title>Praveen S | Chemistry Teacher &amp; Educational Technology Developer | India</title>
+  <meta name="description" content="Praveen S — MSc Chemistry graduate, school counselor, and chemistry teacher building interactive science education tools. Specializing in EdTech, scientific visualization, and web-based learning applications." />
+  <meta name="keywords" content="Chemistry Teacher, Educational Technology, Science Education, School Counselor, EdTech Developer, Chemistry Educator, Interactive Learning, Scientific Visualization, India" />
+  <meta name="author" content="Praveen S" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ── Open Graph (Social Sharing) ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://praveens-chem.github.io/SP-portfolio/" />
+  <meta property="og:title"       content="Praveen S | Chemistry Teacher &amp; EdTech Developer" />
+  <meta property="og:description" content="MSc Chemistry graduate building interactive science learning tools for students, educators and schools. Live projects in molecular visualization, chemistry education, and anatomy learning." />
+  <meta property="og:image"       content="https://praveens-chem.github.io/SP-portfolio/og-image.png" />
+  <meta property="og:locale"      content="en_IN" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Praveen S | Chemistry Teacher &amp; EdTech Developer" />
+  <meta name="twitter:description" content="MSc Chemistry graduate building interactive science learning tools. Live projects: ChemSphere 3D, MOFFIT, NanoLit, Formula Hub, AnatomySphere." />
+  <meta name="twitter:image"       content="https://praveens-chem.github.io/SP-portfolio/og-image.png" />
+
+  <!-- ── Structured Data: Person ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Praveen S",
+    "jobTitle": "Chemistry Teacher & Educational Technology Developer",
+    "description": "MSc Chemistry graduate, school counselor, and educational technology developer building interactive science learning applications.",
+    "url": "https://praveens-chem.github.io/SP-portfolio/",
+    "email": "sp108056@gmail.com",
+    "sameAs": [
+      "https://github.com/praveens-chem",
+      "https://www.linkedin.com/in/s-praveen-ab699a157"
+    ],
+    "knowsAbout": ["Chemistry", "Educational Technology", "Science Education", "School Counseling", "Web Development", "Scientific Visualization"],
+    "addressCountry": "IN"
+  }
+  </script>
+
+  <!-- ── Fonts ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -12,7 +53,7 @@
 <body>
 
 <!-- NAV -->
-<nav class="nav" id="nav">
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
   <div class="nav__logo">SP<span class="accent">.</span></div>
   <ul class="nav__links">
     <li><a href="#about">About</a></li>
@@ -21,221 +62,310 @@
     <li><a href="#workflow">Workflow</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav__cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
-  <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+  <div class="nav__actions">
+    <a href="./resume.pdf" download="Praveen_S_Resume.pdf" class="nav__resume">Download CV</a>
+    <button class="nav__cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+  </div>
+  <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <ul>
     <li><a href="#about"    class="mobile-link">About</a></li>
     <li><a href="#skills"   class="mobile-link">Skills</a></li>
     <li><a href="#projects" class="mobile-link">Projects</a></li>
     <li><a href="#workflow" class="mobile-link">Workflow</a></li>
     <li><a href="#contact"  class="mobile-link">Contact</a></li>
+    <li><a href="./resume.pdf" download class="mobile-link mobile-link--cta">Download CV</a></li>
   </ul>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ================================================
      HERO
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<section class="hero" id="home">
-  <canvas class="hero__canvas" id="moleculeCanvas"></canvas>
-  <div class="hero__glow hero__glow--1"></div>
-  <div class="hero__glow hero__glow--2"></div>
-  <div class="hero__glow hero__glow--3"></div>
+================================================ -->
+<section class="hero" id="home" aria-label="Introduction">
+  <canvas class="hero__canvas" id="moleculeCanvas" aria-hidden="true"></canvas>
+  <div class="hero__glow hero__glow--1" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--2" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--3" aria-hidden="true"></div>
 
   <div class="hero__content">
+
+    <!-- Trust badge -->
     <div class="hero__badge reveal-up">
-      <span class="badge__dot"></span>
-      Open to Opportunities
+      <span class="badge__dot" aria-hidden="true"></span>
+      Open to Teaching &amp; EdTech Opportunities &mdash; India (IST)
     </div>
 
-    <h1 class="hero__name reveal-up">S. Praveen</h1>
+    <h1 class="hero__name reveal-up">Praveen S</h1>
 
+    <!-- Rotating roles — updated to reflect real identity -->
     <div class="hero__titles reveal-up">
-      <span class="hero__title--primary">AI-Assisted Web Application Developer</span>
-      <span class="hero__divider">Â·</span>
-      <span class="hero__title--secondary">Scientific Visualization Creator</span>
+      <span class="hero__title--primary" aria-label="Role">Chemistry Educator</span>
+      <span class="hero__divider" aria-hidden="true">&bull;</span>
+      <span class="hero__title--secondary">School Counselor</span>
+      <span class="hero__divider" aria-hidden="true">&bull;</span>
+      <span class="hero__title--tertiary">EdTech Developer</span>
     </div>
 
     <p class="hero__tagline reveal-up">
-      I transform ideas into interactive scientific web applications<br class="desktop-br" />
-      and visualization tools using modern AI-assisted development workflows.
+      MSc Chemistry graduate building interactive science learning tools<br class="desktop-br" />
+      that make complex concepts easier for students to understand.
     </p>
 
     <div class="hero__actions reveal-up">
       <a href="#projects" class="btn btn--primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         View Projects
       </a>
-      <a href="./resume.pdf" download="S_Praveen_Resume.pdf" class="btn btn--glass">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download Resume
-      </a>
-      <a href="#contact" class="btn btn--outline">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="#contact" class="btn btn--glass">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Contact Me
+      </a>
+      <a href="./resume.pdf" download="Praveen_S_Resume.pdf" class="btn btn--outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV
       </a>
     </div>
 
-    <div class="hero__stats reveal-up">
-      <div class="stat"><span class="stat__num">5+</span><span class="stat__label">Live Projects</span></div>
-      <div class="stat__sep"></div>
-      <div class="stat"><span class="stat__num">AI</span><span class="stat__label">Assisted Workflow</span></div>
-      <div class="stat__sep"></div>
-      <div class="stat"><span class="stat__num">3D</span><span class="stat__label">Blender Python</span></div>
+    <!-- Trust signal stats updated to reflect real credentials -->
+    <div class="hero__stats reveal-up" role="list">
+      <div class="stat" role="listitem">
+        <span class="stat__num">MSc</span>
+        <span class="stat__label">Chemistry</span>
+      </div>
+      <div class="stat__sep" aria-hidden="true"></div>
+      <div class="stat" role="listitem">
+        <span class="stat__num">5+</span>
+        <span class="stat__label">Live EdTech Apps</span>
+      </div>
+      <div class="stat__sep" aria-hidden="true"></div>
+      <div class="stat" role="listitem">
+        <span class="stat__num">3</span>
+        <span class="stat__label">Roles: Teach &bull; Counsel &bull; Build</span>
+      </div>
     </div>
   </div>
 
-  <div class="hero__scroll">
+  <div class="hero__scroll" aria-hidden="true">
     <span>Scroll</span>
     <div class="scroll__line"></div>
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ================================================
+     TRUST SIGNALS BAR
+================================================ -->
+<div class="trust-bar" aria-label="Credentials overview">
+  <div class="container">
+    <div class="trust-bar__inner">
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>MSc Chemistry Graduate</span>
+      </div>
+      <div class="trust-sep" aria-hidden="true"></div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span>Chemistry Teacher</span>
+      </div>
+      <div class="trust-sep" aria-hidden="true"></div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <span>School Counselor</span>
+      </div>
+      <div class="trust-sep" aria-hidden="true"></div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <span>EdTech Developer</span>
+      </div>
+      <div class="trust-sep" aria-hidden="true"></div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <span>India &mdash; Available IST</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
      ABOUT
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<section class="section" id="about">
+================================================ -->
+<section class="section" id="about" aria-labelledby="about-heading">
   <div class="container">
     <div class="about__grid">
+
+      <!-- Visual card -->
       <div class="about__visual reveal-left">
         <div class="about__card glass">
-          <div class="about__avatar">
+          <div class="about__avatar" aria-hidden="true">
             <div class="avatar__ring"></div>
-            <div class="avatar__inner">SP</div>
+            <div class="avatar__inner">PS</div>
           </div>
           <div class="about__card-info">
-            <p class="mono accent">S. Praveen</p>
-            <p class="small muted">AI-Assisted Developer</p>
+            <p class="mono accent">Praveen S</p>
+            <p class="small muted">Chemistry Educator &amp; EdTech Developer</p>
           </div>
           <div class="about__tags">
-            <span class="tag">Chemistry</span>
-            <span class="tag">Materials Science</span>
+            <span class="tag">MSc Chemistry</span>
+            <span class="tag">Teaching</span>
+            <span class="tag">Counseling</span>
             <span class="tag">EdTech</span>
-            <span class="tag">Visualization</span>
           </div>
         </div>
-        <div class="about__orbit">
+        <div class="about__orbit" aria-hidden="true">
           <div class="orbit__item orbit__item--1">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
           <div class="orbit__item orbit__item--2">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <div class="orbit__item orbit__item--3">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
           </div>
         </div>
       </div>
 
+      <!-- Text -->
       <div class="about__text reveal-right">
         <div class="section__eyebrow">About Me</div>
-        <h2 class="section__title">Building the intersection of <span class="gradient-text">science &amp; web</span></h2>
+        <h2 class="section__title" id="about-heading">
+          Where <span class="gradient-text">science meets learning</span>
+        </h2>
         <div class="about__body">
-          <p>I build <strong>educational and scientific web applications</strong> that make complex chemistry, materials science, and scientific data accessible through interactive visualization.</p>
-          <p>My development approach centers on <strong>AI-assisted workflows</strong> â€” using tools like Claude, ChatGPT, and Gemini to rapidly prototype, then deeply customizing, debugging, testing, and refining every line of generated code to meet production standards.</p>
-          <p>Currently expanding into <strong>Blender Python scripting</strong> for scientific visualization, procedural modeling, and animation â€” bringing 3D storytelling to research and education.</p>
-          <p>My focus domains: <em>chemistry, materials science, educational technology, and scientific visualization</em> â€” building tools that researchers, students, and educators actually want to use.</p>
+          <p>
+            I am an <strong>MSc Chemistry graduate</strong> with a background in teaching, school counseling, and educational technology development. My work sits at the intersection of deep scientific knowledge and the challenge of making that knowledge genuinely accessible to learners.
+          </p>
+          <p>
+            As a <strong>Chemistry Teacher and School Counselor</strong>, I have worked directly with students to understand where learning breaks down &mdash; and I build web tools that address those specific gaps. Every project I create starts from a real educational problem, not just a technical exercise.
+          </p>
+          <p>
+            I develop interactive science applications using modern web technologies, combining my domain expertise in <em>chemistry, materials science, and biology</em> with strong visual design to create tools that students, teachers, and researchers actually want to use.
+          </p>
         </div>
+
+        <!-- Three credibility pillars — education-focused not AI-focused -->
         <div class="about__pillars">
-          <div class="pillar"><div class="pillar__icon">âš—ï¸</div><div><strong>Scientific Focus</strong><p class="small muted">Chemistry &amp; Materials Science</p></div></div>
-          <div class="pillar"><div class="pillar__icon">ðŸ¤–</div><div><strong>AI-Driven Dev</strong><p class="small muted">Rapid prototyping &amp; iteration</p></div></div>
-          <div class="pillar"><div class="pillar__icon">ðŸŽ“</div><div><strong>EdTech Vision</strong><p class="small muted">Tools educators actually use</p></div></div>
+          <div class="pillar">
+            <div class="pillar__icon">&#x2697;&#xFE0F;</div>
+            <div>
+              <strong>MSc Chemistry</strong>
+              <p class="small muted">Deep scientific foundation in chemistry &amp; materials science</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon">&#x1F4DA;</div>
+            <div>
+              <strong>Educator &amp; Counselor</strong>
+              <p class="small muted">Direct classroom &amp; student support experience</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon">&#x1F4BB;</div>
+            <div>
+              <strong>EdTech Builder</strong>
+              <p class="small muted">5+ live science learning apps for students &amp; educators</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ================================================
      SKILLS
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<section class="section section--dark" id="skills">
+================================================ -->
+<section class="section section--dark" id="skills" aria-labelledby="skills-heading">
   <div class="container">
     <div class="section__header reveal-up">
       <div class="section__eyebrow">Capabilities</div>
-      <h2 class="section__title">Skills &amp; <span class="gradient-text">Technologies</span></h2>
-      <p class="section__sub">A full-stack toolkit spanning web development, AI tooling, and scientific visualization.</p>
+      <h2 class="section__title" id="skills-heading">Skills &amp; <span class="gradient-text">Expertise</span></h2>
+      <p class="section__sub">A toolkit built around science education: domain knowledge first, technology second.</p>
     </div>
 
     <div class="skills__grid">
+
+      <!-- Science & Education — first and most prominent -->
       <div class="skill-card glass reveal-up" data-delay="0">
+        <div class="skill-card__icon skill-card__icon--teal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="6" cy="8" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="12" cy="18" r="2"/><line x1="8" y1="9" x2="10" y2="11"/><line x1="16" y1="9" x2="14" y2="11"/><line x1="12" y1="15" x2="12" y2="14"/></svg>
+        </div>
+        <h3 class="skill-card__title">Science &amp; Education</h3>
+        <div class="skill-card__items">
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>Chemistry (MSc Level)<div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Chemistry level 95%"><div class="skill-bar__fill skill-bar__fill--teal" style="--w:95%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>Curriculum Design<div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Curriculum Design 88%"><div class="skill-bar__fill skill-bar__fill--teal" style="--w:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>Student Counseling<div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Student Counseling 90%"><div class="skill-bar__fill skill-bar__fill--teal" style="--w:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>Science Communication<div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Science Communication 92%"><div class="skill-bar__fill skill-bar__fill--teal" style="--w:92%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--mid" aria-hidden="true"></span>Materials Science<div class="skill-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="Materials Science 82%"><div class="skill-bar__fill skill-bar__fill--teal" style="--w:82%"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Web Development -->
+      <div class="skill-card glass reveal-up" data-delay="100">
         <div class="skill-card__icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
         <h3 class="skill-card__title">Web Development</h3>
         <div class="skill-card__items">
-          <div class="skill-item"><span class="skill-dot skill-dot--high"></span>HTML5<div class="skill-bar"><div class="skill-bar__fill" style="--w:92%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--high"></span>CSS3 / Animations<div class="skill-bar"><div class="skill-bar__fill" style="--w:88%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--high"></span>JavaScript<div class="skill-bar"><div class="skill-bar__fill" style="--w:85%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--mid"></span>GitHub Pages<div class="skill-bar"><div class="skill-bar__fill" style="--w:90%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--high"></span>Responsive Design<div class="skill-bar"><div class="skill-bar__fill" style="--w:87%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>HTML5<div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5 92%"><div class="skill-bar__fill" style="--w:92%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>CSS3 / Animations<div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3 88%"><div class="skill-bar__fill" style="--w:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>JavaScript<div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript 85%"><div class="skill-bar__fill" style="--w:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--mid" aria-hidden="true"></span>GitHub Pages<div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="GitHub Pages 90%"><div class="skill-bar__fill" style="--w:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>Responsive Design<div class="skill-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" aria-label="Responsive Design 87%"><div class="skill-bar__fill" style="--w:87%"></div></div></div>
         </div>
       </div>
 
-      <div class="skill-card glass reveal-up" data-delay="100">
-        <div class="skill-card__icon skill-card__icon--violet">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <h3 class="skill-card__title">AI-Assisted Dev</h3>
-        <div class="skill-card__items">
-          <div class="skill-item"><span class="skill-dot skill-dot--high"></span>Claude / ChatGPT<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--violet" style="--w:93%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--high"></span>Gemini<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--violet" style="--w:85%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--high"></span>Prompt Engineering<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--violet" style="--w:90%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--mid"></span>Code Debugging<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--violet" style="--w:88%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--high"></span>Rapid Prototyping<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--violet" style="--w:95%"></div></div></div>
-        </div>
-      </div>
-
+      <!-- Scientific Visualization -->
       <div class="skill-card glass reveal-up" data-delay="200">
-        <div class="skill-card__icon skill-card__icon--teal">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="6" cy="8" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="12" cy="18" r="2"/><line x1="8" y1="9" x2="10" y2="11"/><line x1="16" y1="9" x2="14" y2="11"/><line x1="12" y1="15" x2="12" y2="14"/></svg>
+        <div class="skill-card__icon skill-card__icon--violet">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
         </div>
-        <h3 class="skill-card__title">Scientific Applications</h3>
+        <h3 class="skill-card__title">Scientific Visualization</h3>
         <div class="skill-card__items">
-          <div class="skill-item"><span class="skill-dot skill-dot--high"></span>Chemistry Viz<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--teal" style="--w:90%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--high"></span>Educational Technology<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--teal" style="--w:85%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--mid"></span>Scientific Data Viz<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--teal" style="--w:82%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--mid"></span>MOF Structures<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--teal" style="--w:78%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>Molecular Viz (Three.js)<div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Molecular Visualization 88%"><div class="skill-bar__fill skill-bar__fill--violet" style="--w:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--mid" aria-hidden="true"></span>MOF Structures<div class="skill-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="MOF Structures 78%"><div class="skill-bar__fill skill-bar__fill--violet" style="--w:78%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--mid" aria-hidden="true"></span>Blender Python<div class="skill-bar" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" aria-label="Blender Python 62%"><div class="skill-bar__fill skill-bar__fill--violet" style="--w:62%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--mid" aria-hidden="true"></span>Scientific Animation<div class="skill-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Scientific Animation 60%"><div class="skill-bar__fill skill-bar__fill--violet" style="--w:60%"></div></div></div>
         </div>
       </div>
 
+      <!-- Dev Workflow (AI framed as one tool among many) -->
       <div class="skill-card glass reveal-up" data-delay="300">
         <div class="skill-card__icon skill-card__icon--warm">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
         </div>
-        <h3 class="skill-card__title">3D Visualization</h3>
+        <h3 class="skill-card__title">Development Workflow</h3>
         <div class="skill-card__items">
-          <div class="skill-item"><span class="skill-dot skill-dot--mid"></span>Blender<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--warm" style="--w:70%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--mid"></span>Blender Python<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--warm" style="--w:60%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--mid"></span>Molecular Viz<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--warm" style="--w:75%"></div></div></div>
-          <div class="skill-item"><span class="skill-dot skill-dot--low"></span>Scientific Animation<div class="skill-bar"><div class="skill-bar__fill skill-bar__fill--warm" style="--w:55%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>Rapid Prototyping<div class="skill-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" aria-label="Rapid Prototyping 93%"><div class="skill-bar__fill skill-bar__fill--warm" style="--w:93%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>Code Debugging<div class="skill-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" aria-label="Code Debugging 87%"><div class="skill-bar__fill skill-bar__fill--warm" style="--w:87%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--high" aria-hidden="true"></span>GitHub &amp; Deployment<div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="GitHub 90%"><div class="skill-bar__fill skill-bar__fill--warm" style="--w:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-dot skill-dot--mid" aria-hidden="true"></span>UX for Education<div class="skill-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="UX for Education 82%"><div class="skill-bar__fill skill-bar__fill--warm" style="--w:82%"></div></div></div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ================================================
      PROJECTS
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<section class="section" id="projects">
+================================================ -->
+<section class="section" id="projects" aria-labelledby="projects-heading">
   <div class="container">
     <div class="section__header reveal-up">
       <div class="section__eyebrow">Portfolio</div>
-      <h2 class="section__title">Featured <span class="gradient-text">Projects</span></h2>
-      <p class="section__sub">Five live scientific web applications built with AI-assisted development workflows.</p>
+      <h2 class="section__title" id="projects-heading">Featured <span class="gradient-text">Projects</span></h2>
+      <p class="section__sub">Five live science education applications &mdash; each solving a real learning problem.</p>
     </div>
 
     <div class="projects__grid">
 
       <!-- ChemSphere 3D -->
-      <div class="project-card glass reveal-up" data-delay="0">
-        <div class="project-card__visual project-card__visual--1">
+      <article class="project-card glass reveal-up" data-delay="0">
+        <div class="project-card__visual project-card__visual--1" aria-hidden="true">
           <div class="project-visual__inner">
             <div class="mol-anim">
               <div class="mol-atom mol-atom--1"></div>
@@ -249,7 +379,16 @@
         </div>
         <div class="project-card__body">
           <h3 class="project-card__title">ChemSphere 3D</h3>
-          <p class="project-card__desc">Interactive chemistry visualization platform for molecular exploration. Explore 3D molecular structures with intuitive controls.</p>
+          <p class="project-card__problem">
+            <span class="problem-label">Problem solved:</span> Students struggle to visualise 3D molecular geometry from 2D textbook diagrams.
+          </p>
+          <p class="project-card__desc">
+            An interactive browser-based platform that lets students rotate, zoom, and explore molecular structures in real time &mdash; no software installation required. Designed specifically for chemistry students who need spatial understanding to ace exams.
+          </p>
+          <div class="project-card__impact">
+            <span class="impact-tag">&#x1F393; Students</span>
+            <span class="impact-tag">&#x1F9EA; Chemistry Teachers</span>
+          </div>
           <div class="project-card__tech">
             <span class="tech-tag">HTML5</span>
             <span class="tech-tag">Three.js</span>
@@ -257,21 +396,21 @@
             <span class="tech-tag">Chemistry</span>
           </div>
           <div class="project-card__actions">
-            <a href="https://praveens-chem.github.io/ChemSphere-3D/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <a href="https://praveens-chem.github.io/ChemSphere-3D/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Live Demo
             </a>
-            <a href="https://github.com/praveens-chem/ChemSphere-3D" target="_blank" rel="noopener" class="btn btn--glass btn--sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <a href="https://github.com/praveens-chem/ChemSphere-3D" target="_blank" rel="noopener noreferrer" class="btn btn--glass btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               GitHub
             </a>
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- MOFFIT -->
-      <div class="project-card glass reveal-up" data-delay="100">
-        <div class="project-card__visual project-card__visual--2">
+      <article class="project-card glass reveal-up" data-delay="100">
+        <div class="project-card__visual project-card__visual--2" aria-hidden="true">
           <div class="project-visual__inner">
             <div class="mof-anim">
               <div class="mof-node mof-node--1"></div>
@@ -288,28 +427,37 @@
         </div>
         <div class="project-card__body">
           <h3 class="project-card__title">MOFFIT</h3>
-          <p class="project-card__desc">Metal-Organic Framework visualization and exploration platform. Explore porous crystalline structures used in carbon capture and gas storage.</p>
+          <p class="project-card__problem">
+            <span class="problem-label">Problem solved:</span> MOF crystal structures are nearly impossible to grasp from static diagrams in research papers.
+          </p>
+          <p class="project-card__desc">
+            An interactive visualization platform for Metal-Organic Framework structures &mdash; porous crystalline materials critical to carbon capture and gas storage research. Built for chemistry students and researchers who need spatial intuition for advanced materials.
+          </p>
+          <div class="project-card__impact">
+            <span class="impact-tag">&#x1F52C; Researchers</span>
+            <span class="impact-tag">&#x1F4D6; Postgrad Students</span>
+          </div>
           <div class="project-card__tech">
             <span class="tech-tag">JavaScript</span>
             <span class="tech-tag">MOF Structures</span>
             <span class="tech-tag">Materials Science</span>
           </div>
           <div class="project-card__actions">
-            <a href="https://praveens-chem.github.io/MOFFIT/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <a href="https://praveens-chem.github.io/MOFFIT/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Live Demo
             </a>
-            <a href="https://github.com/praveens-chem/MOFFIT" target="_blank" rel="noopener" class="btn btn--glass btn--sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <a href="https://github.com/praveens-chem/MOFFIT" target="_blank" rel="noopener noreferrer" class="btn btn--glass btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               GitHub
             </a>
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- NanoLit AI -->
-      <div class="project-card glass reveal-up" data-delay="200">
-        <div class="project-card__visual project-card__visual--3">
+      <article class="project-card glass reveal-up" data-delay="200">
+        <div class="project-card__visual project-card__visual--3" aria-hidden="true">
           <div class="project-visual__inner">
             <div class="ai-anim">
               <div class="ai-line ai-line--1"></div>
@@ -322,33 +470,42 @@
           <div class="project-card__badge">Live</div>
         </div>
         <div class="project-card__body">
-          <h3 class="project-card__title">NanoLit AI</h3>
-          <p class="project-card__desc">Scientific literature exploration and AI-assisted research tool. Navigate nanoscience publications with intelligent filtering and exploration.</p>
+          <h3 class="project-card__title">NanoLit</h3>
+          <p class="project-card__problem">
+            <span class="problem-label">Problem solved:</span> Navigating dense nanoscience literature is overwhelming for students new to research.
+          </p>
+          <p class="project-card__desc">
+            A scientific literature exploration tool that helps students and early-career researchers navigate nanoscience publications with intelligent filtering. Reduces the barrier to entry for evidence-based learning.
+          </p>
+          <div class="project-card__impact">
+            <span class="impact-tag">&#x1F9D1;&#x200D;&#x1F52C; Research Students</span>
+            <span class="impact-tag">&#x1F4D1; Educators</span>
+          </div>
           <div class="project-card__tech">
-            <span class="tech-tag">AI Integration</span>
-            <span class="tech-tag">Literature</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Literature Explorer</span>
             <span class="tech-tag">Nanoscience</span>
           </div>
           <div class="project-card__actions">
-            <a href="https://praveens-chem.github.io/NanoLit-AI/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <a href="https://praveens-chem.github.io/NanoLit-AI/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Live Demo
             </a>
-            <a href="https://github.com/praveens-chem/NanoLit-AI" target="_blank" rel="noopener" class="btn btn--glass btn--sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <a href="https://github.com/praveens-chem/NanoLit-AI" target="_blank" rel="noopener noreferrer" class="btn btn--glass btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               GitHub
             </a>
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- Formula Hub -->
-      <div class="project-card glass reveal-up" data-delay="300">
-        <div class="project-card__visual project-card__visual--4">
+      <article class="project-card glass reveal-up" data-delay="300">
+        <div class="project-card__visual project-card__visual--4" aria-hidden="true">
           <div class="project-visual__inner">
             <div class="formula-anim">
-              <span class="formula-text">Hâ‚‚O</span>
-              <span class="formula-text formula-text--2">COâ‚‚</span>
+              <span class="formula-text">H&#x2082;O</span>
+              <span class="formula-text formula-text--2">CO&#x2082;</span>
               <span class="formula-text formula-text--3">NaCl</span>
             </div>
           </div>
@@ -356,7 +513,16 @@
         </div>
         <div class="project-card__body">
           <h3 class="project-card__title">ChemSphere Formula Hub</h3>
-          <p class="project-card__desc">Interactive chemistry formula reference platform. A comprehensive library for chemical formulas, reactions, and educational chemistry content.</p>
+          <p class="project-card__problem">
+            <span class="problem-label">Problem solved:</span> Students need a fast, searchable chemistry reference that works offline and without account sign-ups.
+          </p>
+          <p class="project-card__desc">
+            A comprehensive interactive chemistry formula library covering reactions, compounds, and educational content. Built as a revision companion for school and college chemistry students preparing for exams.
+          </p>
+          <div class="project-card__impact">
+            <span class="impact-tag">&#x1F393; School Students</span>
+            <span class="impact-tag">&#x1F4D6; Exam Revision</span>
+          </div>
           <div class="project-card__tech">
             <span class="tech-tag">HTML</span>
             <span class="tech-tag">CSS</span>
@@ -364,21 +530,21 @@
             <span class="tech-tag">Education</span>
           </div>
           <div class="project-card__actions">
-            <a href="https://praveens-chem.github.io/Chemsphere-Formula-Hub/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <a href="https://praveens-chem.github.io/Chemsphere-Formula-Hub/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Live Demo
             </a>
-            <a href="https://github.com/praveens-chem/Chemsphere-Formula-Hub" target="_blank" rel="noopener" class="btn btn--glass btn--sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <a href="https://github.com/praveens-chem/Chemsphere-Formula-Hub" target="_blank" rel="noopener noreferrer" class="btn btn--glass btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               GitHub
             </a>
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- AnatomySphere -->
-      <div class="project-card glass reveal-up" data-delay="400">
-        <div class="project-card__visual project-card__visual--5">
+      <article class="project-card glass reveal-up" data-delay="400">
+        <div class="project-card__visual project-card__visual--5" aria-hidden="true">
           <div class="project-visual__inner">
             <div class="anatomy-anim">
               <div class="anatomy-ring anatomy-ring--1"></div>
@@ -391,7 +557,16 @@
         </div>
         <div class="project-card__body">
           <h3 class="project-card__title">AnatomySphere</h3>
-          <p class="project-card__desc">Interactive human anatomy visualization platform. Explore anatomical structures and systems through immersive 3D-inspired web visualization.</p>
+          <p class="project-card__problem">
+            <span class="problem-label">Problem solved:</span> Human anatomy is difficult to teach without expensive lab models or dissection access.
+          </p>
+          <p class="project-card__desc">
+            An interactive anatomy visualization platform enabling students to explore human body systems through engaging 3D-inspired web visualizations &mdash; making anatomy education accessible to any school with a browser.
+          </p>
+          <div class="project-card__impact">
+            <span class="impact-tag">&#x1F9EC; Biology Students</span>
+            <span class="impact-tag">&#x1F3EB; Schools</span>
+          </div>
           <div class="project-card__tech">
             <span class="tech-tag">JavaScript</span>
             <span class="tech-tag">Anatomy</span>
@@ -399,102 +574,102 @@
             <span class="tech-tag">Education</span>
           </div>
           <div class="project-card__actions">
-            <a href="https://praveens-chem.github.io/AnatomySphere/" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <a href="https://praveens-chem.github.io/AnatomySphere/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Live Demo
             </a>
-            <a href="https://github.com/praveens-chem/AnatomySphere" target="_blank" rel="noopener" class="btn btn--glass btn--sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <a href="https://github.com/praveens-chem/AnatomySphere" target="_blank" rel="noopener noreferrer" class="btn btn--glass btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               GitHub
             </a>
           </div>
         </div>
-      </div>
+      </article>
 
     </div>
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ================================================
      WORKFLOW
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<section class="section section--dark" id="workflow">
+================================================ -->
+<section class="section section--dark" id="workflow" aria-labelledby="workflow-heading">
   <div class="container">
     <div class="section__header reveal-up">
       <div class="section__eyebrow">Process</div>
-      <h2 class="section__title">Development <span class="gradient-text">Workflow</span></h2>
-      <p class="section__sub">A modern AI-assisted development pipeline from idea to deployed product.</p>
+      <h2 class="section__title" id="workflow-heading">How I <span class="gradient-text">Build</span></h2>
+      <p class="section__sub">Every tool starts from a real educational problem and is shaped by teaching experience before any code is written.</p>
     </div>
 
     <div class="workflow__track reveal-up">
-      <div class="workflow__line"></div>
+      <div class="workflow__line" aria-hidden="true"></div>
       <div class="workflow__steps">
         <div class="workflow__step">
-          <div class="step__node"><div class="step__icon">ðŸ’¡</div></div>
-          <div class="step__label">Idea</div>
-          <div class="step__desc">Define the scientific problem and target users</div>
+          <div class="step__node"><div class="step__icon" aria-hidden="true">&#x1F4A1;</div></div>
+          <div class="step__label">Education Gap</div>
+          <div class="step__desc">Identify a real learning problem from teaching experience</div>
         </div>
         <div class="workflow__step">
-          <div class="step__node"><div class="step__icon">ðŸ”¬</div></div>
-          <div class="step__label">Research</div>
-          <div class="step__desc">Domain research and technical feasibility</div>
+          <div class="step__node"><div class="step__icon" aria-hidden="true">&#x1F52C;</div></div>
+          <div class="step__label">Domain Research</div>
+          <div class="step__desc">Apply scientific knowledge to define the right solution</div>
         </div>
         <div class="workflow__step">
-          <div class="step__node step__node--active"><div class="step__icon">ðŸ¤–</div></div>
-          <div class="step__label">AI-Assisted Dev</div>
-          <div class="step__desc">Rapid prototyping with Claude, ChatGPT &amp; Gemini</div>
+          <div class="step__node step__node--active"><div class="step__icon" aria-hidden="true">&#x2699;&#xFE0F;</div></div>
+          <div class="step__label">Build</div>
+          <div class="step__desc">Develop using modern tools &mdash; HTML, CSS, JS, Three.js</div>
         </div>
         <div class="workflow__step">
-          <div class="step__node"><div class="step__icon">âœï¸</div></div>
-          <div class="step__label">Customization</div>
-          <div class="step__desc">Tailor UI, UX, and domain-specific logic</div>
+          <div class="step__node"><div class="step__icon" aria-hidden="true">&#x270F;&#xFE0F;</div></div>
+          <div class="step__label">Customise</div>
+          <div class="step__desc">Tailor UX for the target learner, not just aesthetics</div>
         </div>
         <div class="workflow__step">
-          <div class="step__node"><div class="step__icon">ðŸ§ª</div></div>
-          <div class="step__label">Testing</div>
-          <div class="step__desc">Cross-device and functional testing</div>
+          <div class="step__node"><div class="step__icon" aria-hidden="true">&#x1F9EA;</div></div>
+          <div class="step__label">Test</div>
+          <div class="step__desc">Cross-device testing &amp; educational effectiveness check</div>
         </div>
         <div class="workflow__step">
-          <div class="step__node"><div class="step__icon">ðŸ›</div></div>
-          <div class="step__label">Debugging</div>
-          <div class="step__desc">Fix, refine, and optimize performance</div>
+          <div class="step__node"><div class="step__icon" aria-hidden="true">&#x1F41B;</div></div>
+          <div class="step__label">Refine</div>
+          <div class="step__desc">Fix, optimise, and improve based on use</div>
         </div>
         <div class="workflow__step">
-          <div class="step__node"><div class="step__icon">ðŸš€</div></div>
-          <div class="step__label">Deployment</div>
-          <div class="step__desc">GitHub Pages continuous deployment</div>
+          <div class="step__node"><div class="step__icon" aria-hidden="true">&#x1F680;</div></div>
+          <div class="step__label">Deploy</div>
+          <div class="step__desc">GitHub Pages &mdash; free, fast, and accessible globally</div>
         </div>
         <div class="workflow__step">
-          <div class="step__node step__node--glow"><div class="step__icon">â™¾ï¸</div></div>
-          <div class="step__label">Continuous Improvement</div>
-          <div class="step__desc">Iterate based on feedback and new ideas</div>
+          <div class="step__node step__node--glow"><div class="step__icon" aria-hidden="true">&#x267E;&#xFE0F;</div></div>
+          <div class="step__label">Iterate</div>
+          <div class="step__desc">Improve based on student and educator feedback</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ================================================
      LEARNING JOURNEY
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<section class="section" id="journey">
+================================================ -->
+<section class="section" id="journey" aria-labelledby="journey-heading">
   <div class="container">
     <div class="section__header reveal-up">
       <div class="section__eyebrow">Timeline</div>
-      <h2 class="section__title">Learning <span class="gradient-text">Journey</span></h2>
+      <h2 class="section__title" id="journey-heading">My <span class="gradient-text">Journey</span></h2>
     </div>
 
     <div class="journey__timeline">
       <div class="journey__item journey__item--left reveal-left">
         <div class="journey__connector"><div class="journey__dot"></div></div>
         <div class="journey__card glass">
-          <div class="journey__year mono accent">2025</div>
-          <h3>First Scientific Web Apps</h3>
-          <p>Built educational and scientific web applications, establishing a development workflow combining AI assistance with deep customization and scientific domain knowledge.</p>
+          <div class="journey__year mono accent">Foundation</div>
+          <h3>MSc Chemistry &amp; Teaching</h3>
+          <p>Completed MSc Chemistry and began teaching and school counseling &mdash; developing deep understanding of where students struggle with science concepts and what makes explanations truly click.</p>
           <div class="journey__tags">
-            <span class="tag">HTML/CSS/JS</span>
-            <span class="tag">GitHub Pages</span>
-            <span class="tag">AI Workflows</span>
+            <span class="tag">MSc Chemistry</span>
+            <span class="tag">Teaching</span>
+            <span class="tag">School Counseling</span>
           </div>
         </div>
       </div>
@@ -502,15 +677,13 @@
       <div class="journey__item journey__item--right reveal-right">
         <div class="journey__connector"><div class="journey__dot journey__dot--active"></div></div>
         <div class="journey__card glass">
-          <div class="journey__year mono accent">2026</div>
-          <h3>Portfolio Expansion</h3>
-          <p>Launched ChemSphere 3D, MOFFIT, NanoLit AI, ChemSphere Formula Hub, and AnatomySphere â€” a full suite of scientific and educational tools covering molecular visualization, MOF structures, literature research, chemistry education, and human anatomy.</p>
+          <div class="journey__year mono accent">2025</div>
+          <h3>First EdTech Applications</h3>
+          <p>Began building web-based science education tools, translating classroom teaching experience into interactive digital learning apps. Established a development workflow combining scientific domain knowledge with modern web technologies.</p>
           <div class="journey__tags">
-            <span class="tag">ChemSphere 3D</span>
-            <span class="tag">MOFFIT</span>
-            <span class="tag">NanoLit AI</span>
-            <span class="tag">Formula Hub</span>
-            <span class="tag">AnatomySphere</span>
+            <span class="tag">HTML/CSS/JS</span>
+            <span class="tag">GitHub Pages</span>
+            <span class="tag">EdTech</span>
           </div>
         </div>
       </div>
@@ -519,13 +692,15 @@
         <div class="journey__connector"><div class="journey__dot journey__dot--current"></div></div>
         <div class="journey__card glass journey__card--current">
           <div class="journey__badge-now">Now</div>
-          <div class="journey__year mono accent">Current</div>
-          <h3>Blender Python Exploration</h3>
-          <p>Expanding into Blender Python scripting for scientific visualization â€” learning procedural generation, molecular animation, and 3D scene creation for educational content.</p>
+          <div class="journey__year mono accent">2026</div>
+          <h3>Portfolio of Science Learning Tools</h3>
+          <p>Launched five live educational applications &mdash; ChemSphere 3D, MOFFIT, NanoLit, ChemSphere Formula Hub, and AnatomySphere &mdash; covering molecular visualization, materials science, literature research, chemistry education, and human anatomy.</p>
           <div class="journey__tags">
-            <span class="tag">Blender</span>
-            <span class="tag">Python</span>
-            <span class="tag">3D Animation</span>
+            <span class="tag">ChemSphere 3D</span>
+            <span class="tag">MOFFIT</span>
+            <span class="tag">NanoLit</span>
+            <span class="tag">Formula Hub</span>
+            <span class="tag">AnatomySphere</span>
           </div>
         </div>
       </div>
@@ -533,13 +708,13 @@
       <div class="journey__item journey__item--right reveal-right">
         <div class="journey__connector"><div class="journey__dot journey__dot--future"></div></div>
         <div class="journey__card glass journey__card--future">
-          <div class="journey__year mono" style="color: var(--c-violet)">Future</div>
-          <h3>Procedural Science Generators</h3>
-          <p>Building procedural scientific scene generators and educational animations â€” merging web interactivity with Blender-powered 3D visualization for next-generation science education.</p>
+          <div class="journey__year mono" style="color: var(--c-violet)">Expanding</div>
+          <h3>3D Scientific Visualization</h3>
+          <p>Exploring Blender Python scripting to create animated 3D molecular models and scientific scenes &mdash; merging teaching expertise with next-generation science visualization for educational content.</p>
           <div class="journey__tags">
-            <span class="tag tag--future">Procedural Gen</span>
-            <span class="tag tag--future">Educational Animations</span>
-            <span class="tag tag--future">3D Science</span>
+            <span class="tag tag--future">Blender Python</span>
+            <span class="tag tag--future">3D Animation</span>
+            <span class="tag tag--future">Science Viz</span>
           </div>
         </div>
       </div>
@@ -547,112 +722,154 @@
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     FUTURE PROJECTS
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<section class="section section--dark" id="future">
+<!-- ================================================
+     ROADMAP (replaces "Future Projects")
+================================================ -->
+<section class="section section--dark" id="roadmap" aria-labelledby="roadmap-heading">
   <div class="container">
     <div class="section__header reveal-up">
-      <div class="section__eyebrow">Coming Soon</div>
-      <h2 class="section__title">Future <span class="gradient-text">Projects</span></h2>
-      <p class="section__sub">The next wave of scientific visualization tools currently in development.</p>
+      <div class="section__eyebrow">What&rsquo;s Next</div>
+      <h2 class="section__title" id="roadmap-heading">Development <span class="gradient-text">Roadmap</span></h2>
+      <p class="section__sub">Science education tools planned for development &mdash; each addressing a gap identified through real teaching experience.</p>
     </div>
 
     <div class="future__grid">
       <div class="future-card glass reveal-up" data-delay="0">
-        <div class="future-card__icon">ðŸŽ¬</div>
-        <div class="future-card__status">In Development</div>
+        <div class="future-card__icon" aria-hidden="true">&#x1F3AC;</div>
+        <div class="future-card__progress">
+          <div class="progress-label">
+            <span class="future-card__status">Planning</span>
+            <span class="progress-pct">20%</span>
+          </div>
+          <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Molecular Animation Studio: 20% complete">
+            <div class="progress-bar__fill" style="--prog:20%"></div>
+          </div>
+        </div>
         <h3 class="future-card__title">Molecular Animation Studio</h3>
-        <p class="future-card__desc">A web-based tool for creating animated molecular visualizations and reaction mechanisms for educational use.</p>
+        <p class="future-card__desc">Animated reaction mechanism visualizations for A-Level and undergraduate chemistry &mdash; making arrow-pushing mechanisms intuitive rather than abstract.</p>
         <div class="future-card__tech">
           <span class="tech-tag">Blender Python</span>
           <span class="tech-tag">Three.js</span>
-          <span class="tech-tag">Animation</span>
+          <span class="tech-tag">EdTech</span>
         </div>
       </div>
+
       <div class="future-card glass reveal-up" data-delay="100">
-        <div class="future-card__icon">ðŸ§±</div>
-        <div class="future-card__status">In Development</div>
+        <div class="future-card__icon" aria-hidden="true">&#x1F9F1;</div>
+        <div class="future-card__progress">
+          <div class="progress-label">
+            <span class="future-card__status">Research</span>
+            <span class="progress-pct">10%</span>
+          </div>
+          <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" aria-label="MOF Generator: 10% complete">
+            <div class="progress-bar__fill" style="--prog:10%"></div>
+          </div>
+        </div>
         <h3 class="future-card__title">MOF Structure Generator</h3>
-        <p class="future-card__desc">Procedurally generate and visualize Metal-Organic Framework crystal structures with customizable linkers and metal nodes.</p>
+        <p class="future-card__desc">A tool for postgraduate students and researchers to procedurally generate and explore custom Metal-Organic Framework geometries directly in the browser.</p>
         <div class="future-card__tech">
           <span class="tech-tag">Blender Python</span>
-          <span class="tech-tag">MOF Chemistry</span>
+          <span class="tech-tag">Materials Science</span>
           <span class="tech-tag">Procedural</span>
         </div>
       </div>
+
       <div class="future-card glass reveal-up" data-delay="200">
-        <div class="future-card__icon">ðŸŒ</div>
-        <div class="future-card__status">In Development</div>
-        <h3 class="future-card__title">Scientific Scene Generator</h3>
-        <p class="future-card__desc">Generate publication-quality 3D scientific scenes and diagrams from simple data inputs using AI-assisted rendering pipelines.</p>
-        <div class="future-card__tech">
-          <span class="tech-tag">AI</span>
-          <span class="tech-tag">3D Rendering</span>
-          <span class="tech-tag">Data Viz</span>
+        <div class="future-card__icon" aria-hidden="true">&#x1F4DA;</div>
+        <div class="future-card__progress">
+          <div class="progress-label">
+            <span class="future-card__status">Concept</span>
+            <span class="progress-pct">5%</span>
+          </div>
+          <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" aria-label="Chemistry Tutor Platform: 5% complete">
+            <div class="progress-bar__fill" style="--prog:5%"></div>
+          </div>
         </div>
-      </div>
-      <div class="future-card glass reveal-up" data-delay="300">
-        <div class="future-card__icon">ðŸ“š</div>
-        <div class="future-card__status">In Development</div>
-        <h3 class="future-card__title">Interactive 3D Education Platform</h3>
-        <p class="future-card__desc">A complete e-learning platform with interactive 3D molecular models, simulations, and AI-guided exploration for chemistry students.</p>
+        <h3 class="future-card__title">Chemistry Tutor Platform</h3>
+        <p class="future-card__desc">An end-to-end online tuition platform for chemistry students &mdash; combining interactive visualizations, quizzes, and progress tracking for school and college level.</p>
         <div class="future-card__tech">
           <span class="tech-tag">EdTech</span>
+          <span class="tech-tag">Interactive Quizzes</span>
+          <span class="tech-tag">Progress Tracking</span>
+        </div>
+      </div>
+
+      <div class="future-card glass reveal-up" data-delay="300">
+        <div class="future-card__icon" aria-hidden="true">&#x1F9EC;</div>
+        <div class="future-card__progress">
+          <div class="progress-label">
+            <span class="future-card__status">Concept</span>
+            <span class="progress-pct">5%</span>
+          </div>
+          <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" aria-label="Periodic Table Experience: 5% complete">
+            <div class="progress-bar__fill" style="--prog:5%"></div>
+          </div>
+        </div>
+        <h3 class="future-card__title">Immersive Periodic Table</h3>
+        <p class="future-card__desc">A fully interactive, 3D-capable periodic table with element stories, real-world applications, and trend visualizations &mdash; designed to make chemistry genuinely engaging for school students.</p>
+        <div class="future-card__tech">
           <span class="tech-tag">WebGL</span>
-          <span class="tech-tag">AI Guidance</span>
+          <span class="tech-tag">School EdTech</span>
+          <span class="tech-tag">Interactive</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ================================================
      CONTACT
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<section class="section" id="contact">
+================================================ -->
+<section class="section" id="contact" aria-labelledby="contact-heading">
   <div class="container">
     <div class="section__header reveal-up">
-      <div class="section__eyebrow">Let's Connect</div>
-      <h2 class="section__title">Get in <span class="gradient-text">Touch</span></h2>
-      <p class="section__sub">Open to internships, freelance projects, collaborations with startups, scientific organizations, and EdTech companies.</p>
+      <div class="section__eyebrow">Let&rsquo;s Connect</div>
+      <h2 class="section__title" id="contact-heading">Get in <span class="gradient-text">Touch</span></h2>
+      <p class="section__sub">Open to teaching roles, EdTech collaborations, freelance educational projects, and school or institution partnerships.</p>
     </div>
 
     <div class="contact__grid">
       <div class="contact__info reveal-left">
         <div class="contact__text">
-          <p>Whether you're a recruiter looking for a developer who brings scientific depth to web applications, a startup needing rapid prototyping, or a research organization wanting to make data visually compelling â€” I'd love to talk.</p>
+          <p>
+            Whether you are a school looking for a chemistry teacher who also builds digital learning tools, an EdTech platform seeking science education content, a parent looking for online tuition, or a startup needing a developer who deeply understands science education &mdash; I would love to talk.
+          </p>
+          <p class="contact__location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            Based in <strong>India</strong> &mdash; Available <strong>IST (UTC+5:30)</strong>, open to remote work globally
+          </p>
         </div>
+
         <div class="contact__links">
-          <a href="mailto:sp108056@gmail.com" class="contact__link glass">
+          <a href="mailto:sp108056@gmail.com" class="contact__link glass" aria-label="Send email to sp108056@gmail.com">
             <div class="contact__link-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
             <div>
               <div class="contact__link-label mono small">Email</div>
               <div class="contact__link-value">sp108056@gmail.com</div>
             </div>
-            <svg class="contact__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <svg class="contact__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
-          <a href="https://github.com/praveens-chem" target="_blank" rel="noopener" class="contact__link glass">
+          <a href="https://github.com/praveens-chem" target="_blank" rel="noopener noreferrer" class="contact__link glass" aria-label="GitHub profile (opens in new tab)">
             <div class="contact__link-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             </div>
             <div>
               <div class="contact__link-label mono small">GitHub</div>
               <div class="contact__link-value">github.com/praveens-chem</div>
             </div>
-            <svg class="contact__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <svg class="contact__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
-          <a href="https://www.linkedin.com/in/s-praveen-ab699a157" target="_blank" rel="noopener" class="contact__link glass">
+          <a href="https://www.linkedin.com/in/s-praveen-ab699a157" target="_blank" rel="noopener noreferrer" class="contact__link glass" aria-label="LinkedIn profile (opens in new tab)">
             <div class="contact__link-icon contact__link-icon--blue">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </div>
             <div>
               <div class="contact__link-label mono small">LinkedIn</div>
               <div class="contact__link-value">linkedin.com/in/s-praveen-ab699a157</div>
             </div>
-            <svg class="contact__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <svg class="contact__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
         </div>
       </div>
@@ -660,41 +877,61 @@
       <div class="contact__visual reveal-right">
         <div class="contact__card glass">
           <div class="contact__availability">
-            <div class="availability__dot"></div>
-            <span>Available for new opportunities</span>
+            <div class="availability__dot" aria-hidden="true"></div>
+            <span>Available for new opportunities &mdash; India (IST)</span>
           </div>
-          <h3>What I'm looking for</h3>
+          <h3>What I&rsquo;m open to</h3>
           <ul class="contact__list">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Internships in Web Development / EdTech</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Freelance scientific visualization projects</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Startup collaborations needing rapid prototyping</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Scientific / research organization projects</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Educational technology platform development</li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Chemistry teaching roles (school / college / online)
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              EdTech platform &amp; content development
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Freelance science education web apps
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              School &amp; institution digital learning projects
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Online tuition for chemistry students
+            </li>
           </ul>
+          <a href="mailto:sp108056@gmail.com" class="btn btn--primary contact__cta">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Send a Message
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ================================================
      FOOTER
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+================================================ -->
 <footer class="footer">
   <div class="container">
     <div class="footer__inner">
       <div class="footer__brand">
         <span class="footer__logo">SP<span class="accent">.</span></span>
-        <p class="footer__tagline">Built by S. Praveen using modern AI-assisted development workflows.</p>
+        <p class="footer__tagline">Chemistry Educator &amp; EdTech Developer &mdash; India</p>
       </div>
       <div class="footer__links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+        <a href="./resume.pdf" download>Download CV</a>
       </div>
       <div class="footer__copy">
-        <p class="mono small muted">Â© 2026 S. Praveen. All rights reserved.</p>
+        <p class="mono small muted">&copy; 2026 Praveen S. All rights reserved.</p>
       </div>
     </div>
   </div>
